@@ -50,7 +50,7 @@ svm.fit.2 <- train(label ~ ., data=data, method="svmRadial",
 rf.fit <- train(label ~ ., data=data, method="rf", 
                   trControl=trainControl(method="cv", number=3))
 
-models.name <- c('SVM with linear kernal', 'SVM with RBF kernal', 'Neural network', 'Random forest') 
+models.name <- c('SVM with linear kernel', 'SVM with RBF kernel', 'Neural network', 'Random forest') 
 models <- list(svm.fit.1, svm.fit.2, nnet.fit, rf.fit)
 
 #combine predictions on grid
@@ -80,7 +80,7 @@ dbPlot <- ggplot(data = pred.melt)+
         panel.grid.major = element_blank(), panel.grid.minor = element_blank())
 
 #output png
-png('dbPlot.png', width=1280, height=800)
+png('dbPlot.png', width=1280, height=900)
 dbPlot
 dev.off()
 
